@@ -1,0 +1,112 @@
+{
+  "name": "react-evefyou-layouts",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "./cjs/index.js",
+  "module": "./es/index.js",
+  "types": "./types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./es/index.js",
+      "require": "./cjs/index.js",
+      "types": "./types/index.d.ts"
+    },
+    "./windi.css": {
+      "import": "./css/windi.css",
+      "require": "./css/windi.css"
+    },
+    "./AdminLayout": {
+      "import": "./es/AdminLayout/index.js",
+      "require": "./cjs/AdminLayout/index.js",
+      "types": "./types/index.d.ts"
+    },
+    "./CommonLayout": {
+      "import": "./es/CommonLayout/index.js",
+      "require": "./cjs/CommonLayout/index.js",
+      "types": "./types/index.d.ts"
+    },
+    "./BasicFooter": {
+      "import": "./es/BasicFooter/index.js",
+      "require": "./cjs/BasicFooter/index.js",
+      "types": "./types/index.d.ts"
+    },
+    "./BasicHeader": {
+      "import": "./es/BasicHeader/index.js",
+      "require": "./cjs/BasicHeader/index.js",
+      "types": "./types/index.d.ts"
+    },
+    "./BasicSider": {
+      "import": "./es/BasicSider/index.js",
+      "require": "./cjs/BasicSider/index.js",
+      "types": "./types/index.d.ts"
+    }
+  },
+  "files": [
+    "cjs",
+    "es",
+    "css",
+    "types"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "build:tsc": "tsc",
+    "clean": "rimraf node_modules",
+    "clean:cache": "rimraf node_modules/.cache/ && rimraf node_modules/.vite",
+    "clean:build": "rimraf es && rimraf cjs && rimraf css && rimraf dist && rimraf types",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EvefyouFE/react-evefyou-layouts.git"
+  },
+  "keywords": [
+    "react",
+    "components",
+    "containers",
+    "evefyou"
+  ],
+  "author": "EvefyouFE",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EvefyouFE/react-evefyou-layouts/issues"
+  },
+  "homepage": "https://github.com/EvefyouFE/react-evefyou-layouts#readme",
+  "peerDependencies": {
+    "@ant-design/icons": ">=5.0.1",
+    "antd": ">=5.6.3",
+    "classnames": ">=2.3.2",
+    "react": ">=18.2.0",
+    "react-dom": ">=18.2.0",
+    "react-evefyou-components": ">=1.0.11"
+  },
+  "devDependencies": {
+    "@types/node": "^20.5.1",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@vitejs/plugin-react": "^4.0.3",
+    "cssnano": "^6.0.1",
+    "eslint": "^8.45.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "less": "^4.1.3",
+    "postcss": "^8.4.23",
+    "postcss-cli": "^10.1.0",
+    "postcss-html": "^1.5.0",
+    "postcss-less": "^6.0.0",
+    "postcss-preset-env": "^8.3.2",
+    "rimraf": "^5.0.1",
+    "tslib": "^2.6.1",
+    "typescript": "^5.1.6",
+    "vite": "^4.4.5",
+    "vite-plugin-dts": "^3.5.1",
+    "vite-plugin-lib-inject-css": "^1.2.1",
+    "vite-plugin-windicss": "^1.9.0",
+    "vite-tsconfig-paths": "^4.2.0",
+    "windicss": "^3.5.6"
+  }
+}
