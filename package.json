@@ -1,52 +1,48 @@
 {
   "name": "react-evefyou-layouts",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "type": "module",
   "main": "./cjs/index.js",
   "module": "./es/index.js",
-  "types": "./types/index.d.ts",
+  "types": "./index.d.ts",
   "exports": {
     ".": {
       "import": "./es/index.js",
       "require": "./cjs/index.js",
-      "types": "./types/index.d.ts"
-    },
-    "./windi.css": {
-      "import": "./css/windi.css",
-      "require": "./css/windi.css"
+      "types": "./index.d.ts"
     },
     "./AdminLayout": {
       "import": "./es/AdminLayout/index.js",
       "require": "./cjs/AdminLayout/index.js",
-      "types": "./types/index.d.ts"
+      "types": "./index.d.ts"
     },
     "./CommonLayout": {
       "import": "./es/CommonLayout/index.js",
       "require": "./cjs/CommonLayout/index.js",
-      "types": "./types/index.d.ts"
+      "types": "./index.d.ts"
     },
     "./BasicFooter": {
       "import": "./es/BasicFooter/index.js",
       "require": "./cjs/BasicFooter/index.js",
-      "types": "./types/index.d.ts"
+      "types": "./index.d.ts"
     },
     "./BasicHeader": {
       "import": "./es/BasicHeader/index.js",
       "require": "./cjs/BasicHeader/index.js",
-      "types": "./types/index.d.ts"
+      "types": "./index.d.ts"
     },
     "./BasicSider": {
       "import": "./es/BasicSider/index.js",
       "require": "./cjs/BasicSider/index.js",
-      "types": "./types/index.d.ts"
+      "types": "./index.d.ts"
     }
   },
   "files": [
     "cjs",
     "es",
     "css",
-    "types"
+    "index.d.ts"
   ],
   "scripts": {
     "dev": "vite",
@@ -80,7 +76,7 @@
     "classnames": ">=2.3.2",
     "react": ">=18.2.0",
     "react-dom": ">=18.2.0",
-    "react-evefyou-components": ">=1.0.13"
+    "react-evefyou-components": ">=1.0.17"
   },
   "devDependencies": {
     "@types/node": "^20.5.1",

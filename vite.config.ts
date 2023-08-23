@@ -16,6 +16,7 @@ import cssnanoPlugin from "cssnano";
 import postcssPresetEnv from 'postcss-preset-env';
 import WindiCSS from 'vite-plugin-windicss';
 import { libInjectCss } from 'vite-plugin-lib-inject-css';
+// import { identity, join, pipe, split, useWith } from "ramda";
 
 const pathResolve = (v: string) => path.resolve(__dirname, v)
 
@@ -24,14 +25,17 @@ const regexOfPackages = externalPackages
   .map(packageName => new RegExp(`^${packageName}(\\/.*)?`));
 
 const entries = {
-  'index': pathResolve('layouts/index.ts'),
-  'AdminLayout': pathResolve('layouts/AdminLayout'),
-  'CommonLayout': pathResolve('layouts/CommonLayout'),
-  'BasicFooter': pathResolve('layouts/BasicFooter'),
-  'BasicHeader': pathResolve('layouts/BasicHeader'),
-  'BasicSider': pathResolve('layouts/BasicSider'),
+  'index': pathResolve('layouts/index.ts')
 }
-const otherEntryFile = Object.keys(entries).filter(e => e !== 'index')
+
+const locales = Object.keys(pkg.exports)
+  .filter(e => e.includes('locale'))
+  .map(e => e.split('./')[1])
+const components = Object.keys(pkg.exports)
+  .filter(e => e !== '.' && !e.includes('locale'))
+  .map(e => e.split('./')[1])
+
+console.log('components', components)
 
 export default defineConfig({
   plugins: [
@@ -44,15 +48,7 @@ export default defineConfig({
     }),
     tsconfigPaths(),
     dts({
-      insertTypesEntry: true,
-      // rollupTypes: true,
-      outDir: ['types'],
-      beforeWriteFile: (filePath, content) => {
-        const entryDFile = otherEntryFile
-          .map(e => e.concat('.d.ts'))
-          .find(e => filePath.includes(e))
-        return entryDFile ? false : { filePath, content }
-      },
+      rollupTypes: true,
     }),
     libInjectCss({
       build: {
@@ -66,19 +62,22 @@ export default defineConfig({
       fileName: (format, entryName) => {
         return entryName === 'index'
           ? `${format}/index.js`
-          : entryName.includes('_')
-            ? `${format}/locale/${entryName}.js`
-            : `${format}/[name]/index.js`
+          : `${format}/[name]/index.js`
       },
       name: 'react-evefyou-layouts',
       formats: ["es", "cjs"],
       rollupOptions: {
         output: {
-          chunkFileNames: (chunkInfo) => otherEntryFile.reduce(
-            (acc, cur) => !chunkInfo.isEntry && chunkInfo.moduleIds.findIndex(s => s.includes(cur)) !== -1
-              ? `[format]/${cur}/other.js` : acc,
-            '[format]/_common/[name]/[name].js'
-          ),
+          manualChunks: (id) => {
+            let en = components.find(e => id.includes(e))
+            en ??= locales.find(l => id.includes(l.split('_')[0]))
+            console.log('manualChunks', en, id)
+            return en
+          },
+          chunkFileNames: (chunkInfo) => {
+            console.log('chunkInfo', chunkInfo.name)
+            return '[format]/[name]/index.js'
+          },
           assetFileNames: '[ext]/[name].[ext]',
         },
         external: regexOfPackages
@@ -95,7 +94,7 @@ export default defineConfig({
           hack: `true; @import (reference) "${path.resolve('layouts/_common/styles/variables/index.less')}";`,
           'primary-color': '#0960bd',
           'text-color': '#c9d1d9',
-          'text-color-base': '#000000d9'
+          'text-color-base': '#000000d9',
         }
       }
     },
