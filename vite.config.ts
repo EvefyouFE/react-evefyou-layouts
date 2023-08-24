@@ -16,7 +16,6 @@ import cssnanoPlugin from "cssnano";
 import postcssPresetEnv from 'postcss-preset-env';
 import WindiCSS from 'vite-plugin-windicss';
 import { libInjectCss } from 'vite-plugin-lib-inject-css';
-// import { identity, join, pipe, split, useWith } from "ramda";
 
 const pathResolve = (v: string) => path.resolve(__dirname, v)
 
