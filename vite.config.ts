@@ -67,6 +67,7 @@ export default defineConfig({
       formats: ["es", "cjs"],
       rollupOptions: {
         output: {
+          minifyInternalExports: false,
           manualChunks: (id) => {
             let en = components.find(e => id.includes(e))
             en ??= locales.find(l => id.includes(l.split('_')[0]))

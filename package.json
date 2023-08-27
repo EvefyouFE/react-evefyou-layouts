@@ -1,6 +1,6 @@
 {
   "name": "react-evefyou-layouts",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "",
   "type": "module",
   "main": "./cjs/index.js",
@@ -76,7 +76,7 @@
     "classnames": ">=2.3.2",
     "react": ">=18.2.0",
     "react-dom": ">=18.2.0",
-    "react-evefyou-components": ">=1.0.21",
+    "react-evefyou-components": ">=1.0.23",
     "@iconify/react": ">=4.1.1",
     "moment": ">=2.29.4",
     "react-evefyou-router": ">=1.0.7",
