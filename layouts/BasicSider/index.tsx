@@ -9,7 +9,8 @@
 import { ConfigProvider } from 'antd';
 import React, { useMemo } from 'react';
 import Sider from 'antd/es/layout/Sider';
-import { BasicScroll, BasicMenu, useDesign } from 'react-evefyou-components';
+import { BasicScroll, BasicMenu } from 'react-evefyou-components';
+import { useDesign } from 'react-evefyou-common';
 import { BasicSiderProps } from "./props";
 import './BasicSider.less'
 import 'virtual:windi.css';
