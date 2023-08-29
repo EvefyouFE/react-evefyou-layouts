@@ -14,8 +14,3 @@ export * from './BasicFooter'
 export * from './BasicHeader'
 export * from './BasicSider'
 
-export * from './AdminLayout/props'
-export * from './CommonLayout/props'
-export * from './BasicFooter/props'
-export * from './BasicHeader/props'
-export * from './BasicSider/props'

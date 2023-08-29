@@ -1,7 +1,7 @@
 import { PropsWithChildren } from "react";
-import { BasicSiderProps } from "../BasicSider/props";
-import { BasicFooterProps } from "@/BasicFooter/props";
-import { BasicHeaderProps } from "..";
+import { BasicSiderProps } from "@/BasicSider";
+import { BasicFooterProps } from "@/BasicFooter";
+import { BasicHeaderProps } from "@/BasicHeader";
 
 export type AdminLayoutProps = PropsWithChildren & {
   siderProps?: BasicSiderProps;

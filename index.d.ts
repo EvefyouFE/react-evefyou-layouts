@@ -23,6 +23,8 @@ export declare type BasicFooterProps = BasicProps & React.RefAttributes<HTMLElem
 
 export declare const BasicHeader: React_2.FC<BasicHeaderProps>;
 
+export declare const BasicHeaderLeft: React_2.FC<BasicHeaderLeftProps>;
+
 export declare type BasicHeaderLeftProps = {
     logo?: React_2.ReactNode;
     showBreadcrumb?: boolean;

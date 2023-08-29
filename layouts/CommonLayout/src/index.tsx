@@ -1,4 +1,4 @@
-import { BasicFooter } from "@/BasicFooter";
+import { BasicFooter } from "@/BasicFooter/src";
 import { Layout } from 'antd';
 import { Content } from 'antd/es/layout/layout';
 import React from 'react';

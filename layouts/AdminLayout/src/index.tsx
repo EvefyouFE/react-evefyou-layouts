@@ -10,10 +10,10 @@ import 'virtual:windi.css';
 import { Layout } from 'antd';
 import { Content } from 'antd/es/layout/layout';
 import React from 'react';
-import { BasicSider } from "../BasicSider";
-import { BasicHeader } from "../BasicHeader";
+import { BasicSider } from "../../BasicSider/src";
+import { BasicHeader } from "../../BasicHeader";
 import { AdminLayoutProps } from "./props";
-import { BasicFooter } from "@/BasicFooter";
+import { BasicFooter } from "@/BasicFooter/src";
 
 export const AdminLayout: React.FC<AdminLayoutProps> = ({
   children,
