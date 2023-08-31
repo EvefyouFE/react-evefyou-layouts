@@ -7,7 +7,7 @@
  * Copyright (c) 2023 by EvefyouFE/evef, All Rights Reserved. 
  */
 import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
-import { BasicBreadcrumb } from 'react-evefyou-components';
+import { BasicBreadcrumb } from 'react-evefyou-components/BasicBreadcrumb';
 import { BasicHeaderLeftProps } from "../props";
 import 'virtual:windi.css';
 import React from "react";

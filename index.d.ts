@@ -1,6 +1,6 @@
 /// <reference types="react" />
 
-import { BasicMenuProps } from 'react-evefyou-components';
+import { BasicMenuProps } from 'react-evefyou-components/BasicMenu';
 import { BasicProps } from 'antd/es/layout/layout';
 import { PropsWithChildren } from 'react';
 import { default as React_2 } from 'react';
