@@ -1,31 +1,27 @@
 {
   "name": "react-evefyou-layouts",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "description": "",
   "type": "module",
   "main": "./cjs/index.js",
   "module": "./es/index.js",
-  "types": "./index.d.ts",
+  "types": "./es/index.d.ts",
   "exports": {
     ".": {
       "import": "./es/index.js",
-      "require": "./cjs/index.js",
-      "types": "./index.d.ts"
+      "require": "./cjs/index.js"
     },
     "./AdminLayout": {
       "import": "./es/AdminLayout/index.js",
-      "require": "./cjs/AdminLayout/index.js",
-      "types": "./index.d.ts"
+      "require": "./cjs/AdminLayout/index.js"
     },
     "./CommonLayout": {
       "import": "./es/CommonLayout/index.js",
-      "require": "./cjs/CommonLayout/index.js",
-      "types": "./index.d.ts"
+      "require": "./cjs/CommonLayout/index.js"
     },
     "./BasicFooter": {
       "import": "./es/BasicFooter/index.js",
-      "require": "./cjs/BasicFooter/index.js",
-      "types": "./index.d.ts"
+      "require": "./cjs/BasicFooter/index.js"
     },
     "./BasicHeader": {
       "import": "./es/BasicHeader/index.js",
@@ -34,15 +30,13 @@
     },
     "./BasicSider": {
       "import": "./es/BasicSider/index.js",
-      "require": "./cjs/BasicSider/index.js",
-      "types": "./index.d.ts"
+      "require": "./cjs/BasicSider/index.js"
     }
   },
   "files": [
     "cjs",
     "es",
-    "css",
-    "index.d.ts"
+    "css"
   ],
   "scripts": {
     "dev": "vite",
@@ -76,10 +70,10 @@
     "classnames": ">=2.3.2",
     "react": ">=18.2.0",
     "react-dom": ">=18.2.0",
-    "react-evefyou-components": ">=1.0.37",
-    "react-evefyou-common": ">=1.0.9",
-    "react-evefyou-router": ">=1.0.13",
-    "react-evefyou-hooks": ">=1.0.21",
+    "react-evefyou-components": ">=1.0.38",
+    "react-evefyou-common": ">=1.0.12",
+    "react-evefyou-router": ">=1.0.15",
+    "react-evefyou-hooks": ">=1.0.23",
     "@iconify/react": ">=4.1.1",
     "moment": ">=2.29.4",
     "nprogress": ">=0.2.0"
