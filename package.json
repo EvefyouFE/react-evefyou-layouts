@@ -11,6 +11,10 @@
       "import": "./es/index.js",
       "require": "./cjs/index.js"
     },
+    "./windicss": {
+      "import": "./css/windi.css",
+      "require": "./css/windi.css"
+    },
     "./AdminLayout": {
       "import": "./es/AdminLayout/index.js",
       "require": "./cjs/AdminLayout/index.js"
