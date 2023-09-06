@@ -11,7 +11,7 @@ import React, { useMemo } from 'react';
 import Sider from 'antd/es/layout/Sider';
 import { BasicScroll } from 'react-evefyou-components/BasicScroll';
 import { BasicMenu } from 'react-evefyou-components/BasicMenu';
-import { useDesign } from 'react-evefyou-hooks';
+import { useDesign } from 'react-evefyou-hooks/useDesign';
 import { BasicSiderProps } from "./props";
 import './BasicSider.less'
 import 'virtual:windi.css';
