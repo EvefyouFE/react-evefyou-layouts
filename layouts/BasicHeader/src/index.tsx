@@ -15,7 +15,7 @@ import 'virtual:windi.css';
 
 export const BasicHeader: React.FC<BasicHeaderProps> = ({ className, style, headerLeft, headerAction }) => {
   const clsName = classNames('flex items-center p-0 bg-white sticky top-0 z-10', className)
-  const HeaderLeft = headerLeft ? headerLeft : <BasicHeaderLeft />
+  const HeaderLeft = headerLeft ? headerLeft : <BasicHeaderLeft showBreadcrumb />
   return (
     <Header
       className={clsName}

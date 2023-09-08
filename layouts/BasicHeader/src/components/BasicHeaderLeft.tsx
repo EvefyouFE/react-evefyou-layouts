@@ -14,7 +14,7 @@ import React from "react";
 
 export const BasicHeaderLeft: React.FC<BasicHeaderLeftProps> = ({
   logo,
-  showBreadcrumb,
+  showBreadcrumb = true,
   collapsed = false,
   onCollapsed
 }) => {

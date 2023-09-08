@@ -23,21 +23,29 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({
   onContentClick
 }) => {
   const { menuProps, logo } = siderProps ?? {}
-  const { className: headerClassName, style, headerLeft, headerAction } = headerProps ?? {}
-  const { content, className: footerClassName } = footerProps ?? {}
+  const { className: headerClassName, style, headerLeft, headerAction, showBreadcrumb } = headerProps ?? {}
+  const { content, className: footerClassName, show = true } = footerProps ?? {}
 
   return (
     <Layout hasSider>
       <BasicSider menuProps={menuProps} logo={logo} />
       <Layout className="h-screen">
-        <BasicHeader className={headerClassName} style={style} headerLeft={headerLeft} headerAction={headerAction} />
+        <BasicHeader
+          className={headerClassName}
+          style={style}
+          headerLeft={headerLeft}
+          headerAction={headerAction}
+          showBreadcrumb={showBreadcrumb}
+        />
         <Content
           className="h-full"
           onClick={onContentClick}
         >
           {children}
         </Content>
-        <BasicFooter content={content} className={footerClassName} />
+        {
+          show && <BasicFooter content={content} className={footerClassName} />
+        }
       </Layout>
     </Layout>
   );
