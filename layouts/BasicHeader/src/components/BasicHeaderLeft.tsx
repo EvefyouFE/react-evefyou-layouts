@@ -11,6 +11,8 @@ import { BasicBreadcrumb } from 'react-evefyou-components/BasicBreadcrumb';
 import { BasicHeaderLeftProps } from "../props";
 import 'virtual:windi.css';
 import React from "react";
+import { useDesign } from "react-evefyou-hooks/useDesign";
+import classNames from "classnames";
 
 export const BasicHeaderLeft: React.FC<BasicHeaderLeftProps> = ({
   logo,
@@ -18,8 +20,10 @@ export const BasicHeaderLeft: React.FC<BasicHeaderLeftProps> = ({
   collapsed = false,
   onCollapsed
 }) => {
+  const { prefixCls } = useDesign('basic-header-left')
+  const clsName = classNames(prefixCls, 'flex justify-start items-center h-full w-full')
   return (
-    <div className="flex justify-start items-center h-full w-full">
+    <div className={clsName}>
       {logo}
       <div
         className="flex items-center h-full px-3 cursor-pointer transition-colors duration-300 hover:text-primary hover:bg-headerLeftTiggerHover "

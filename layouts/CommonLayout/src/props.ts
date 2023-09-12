@@ -1,6 +1,6 @@
 import { BasicFooterProps } from "@/BasicFooter/src/props"
-import { PropsWithChildren } from "react";
+import { PropsWithChildrenCls } from "react-evefyou-common";
 
-export type CommonLayoutProps = PropsWithChildren & {
+export type CommonLayoutProps = PropsWithChildrenCls & {
   footerProps?: BasicFooterProps;
 }

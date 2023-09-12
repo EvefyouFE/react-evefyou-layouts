@@ -15,6 +15,7 @@ import { useDesign } from 'react-evefyou-hooks/useDesign';
 import { BasicSiderProps } from "./props";
 import './BasicSider.less'
 import 'virtual:windi.css';
+import classNames from "classnames";
 
 export const BasicSider: React.FC<BasicSiderProps> = ({
   logo,
@@ -26,7 +27,7 @@ export const BasicSider: React.FC<BasicSiderProps> = ({
   const { prefixCls } = useDesign('basic-sider');
   const { menuTreeList = [] } = menuProps ?? {}
   const mode = useMemo(() => (collapsed ? 'vertical' : 'inline'), [collapsed]);
-
+  const clsName = classNames(prefixCls, 'h-screen')
   return (
     <Sider
       hidden={hidden}
@@ -35,7 +36,7 @@ export const BasicSider: React.FC<BasicSiderProps> = ({
       collapsed={collapsed}
       collapsedWidth="4rem"
       width={width}
-      className="h-screen"
+      className={clsName}
     >
       {logo}
       <ConfigProvider

@@ -14,9 +14,12 @@ import { BasicSider } from "../../BasicSider/src";
 import { BasicHeader } from "../../BasicHeader";
 import { AdminLayoutProps } from "./props";
 import { BasicFooter } from "@/BasicFooter/src";
+import { useDesign } from "react-evefyou-hooks/useDesign";
+import classNames from "classnames";
 
 export const AdminLayout: React.FC<AdminLayoutProps> = ({
   children,
+  className,
   siderProps,
   footerProps,
   headerProps,
@@ -25,9 +28,10 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({
   const { menuProps, logo } = siderProps ?? {}
   const { className: headerClassName, style, headerLeft, headerAction, showBreadcrumb } = headerProps ?? {}
   const { content, className: footerClassName, show = true } = footerProps ?? {}
-
+  const { prefixCls } = useDesign('admin-layout')
+  const clsName = classNames(prefixCls, className)
   return (
-    <Layout hasSider>
+    <Layout hasSider className={clsName}>
       <BasicSider menuProps={menuProps} logo={logo} />
       <Layout className="h-screen">
         <BasicHeader
