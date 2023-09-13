@@ -12,5 +12,6 @@ export type BasicHeaderProps = BasicProps & React.RefAttributes<HTMLElement> & {
   headerLeft?: React.ReactNode;
   headerAction?: React.ReactNode;
   showBreadcrumb?: boolean;
+  collapsed?: boolean;
   onCollapsed?: () => void;
 }

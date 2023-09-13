@@ -9,7 +9,7 @@
 import 'virtual:windi.css';
 import { Layout } from 'antd';
 import { Content } from 'antd/es/layout/layout';
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { BasicSider } from "../../BasicSider/src";
 import { BasicHeader } from "../../BasicHeader";
 import { AdminLayoutProps } from "./props";
@@ -26,15 +26,19 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({
   onContentClick
 }) => {
   const { menuProps, logo } = siderProps ?? {}
-  const { className: headerClassName, style, headerLeft, headerAction, showBreadcrumb, onCollapsed: onHeaderCollapsed } = headerProps ?? {}
+  const { className: headerClassName, style, headerLeft, headerAction, showBreadcrumb, collapsed, onCollapsed: onHeaderCollapsed } = headerProps ?? {}
   const { content, className: footerClassName, show = true } = footerProps ?? {}
   const { prefixCls } = useDesign('admin-layout')
   const clsName = classNames(prefixCls, className)
-  const [collapsedState, setCollapsedState] = useState(false)
+  const [collapsedState, setCollapsedState] = useState(collapsed)
   const onCollapsed = useCallback(() => {
     onHeaderCollapsed?.()
     setCollapsedState(s => !s)
   }, [onHeaderCollapsed])
+  useEffect(() => {
+    setCollapsedState(collapsed)
+  }, [collapsed])
+
   return (
     <Layout hasSider className={clsName}>
       <BasicSider menuProps={menuProps} logo={logo} collapsed={collapsedState} />
@@ -45,6 +49,7 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({
           headerLeft={headerLeft}
           headerAction={headerAction}
           showBreadcrumb={showBreadcrumb}
+          collapsed={collapsedState}
           onCollapsed={onCollapsed}
         />
         <Content
