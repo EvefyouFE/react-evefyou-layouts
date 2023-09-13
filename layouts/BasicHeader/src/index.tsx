@@ -14,10 +14,12 @@ import classNames from "classnames";
 import 'virtual:windi.css';
 import { useDesign } from "react-evefyou-hooks/useDesign";
 
-export const BasicHeader: React.FC<BasicHeaderProps> = ({ className, style, headerLeft, headerAction }) => {
+export const BasicHeader: React.FC<BasicHeaderProps> = ({
+  className, style, headerLeft, headerAction, onCollapsed
+}) => {
   const { prefixCls } = useDesign('basic-header')
   const clsName = classNames(prefixCls, className, 'flex items-center p-0 bg-white sticky top-0 z-10')
-  const HeaderLeft = headerLeft ? headerLeft : <BasicHeaderLeft showBreadcrumb />
+  const HeaderLeft = headerLeft ? headerLeft : <BasicHeaderLeft showBreadcrumb onCollapsed={onCollapsed} />
   return (
     <Header
       className={clsName}
