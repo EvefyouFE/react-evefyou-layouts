@@ -1,6 +1,6 @@
 {
   "name": "react-evefyou-layouts",
-  "version": "1.0.23",
+  "version": "1.0.25",
   "description": "",
   "type": "module",
   "main": "./cjs/index.js",
@@ -74,9 +74,9 @@
     "classnames": ">=2.3.2",
     "react": ">=18.2.0",
     "react-dom": ">=18.2.0",
-    "react-evefyou-components": ">=1.0.45",
-    "react-evefyou-common": ">=1.0.17",
-    "react-evefyou-hooks": ">=1.0.28",
+    "react-evefyou-common": ">=1.0.18",
+    "react-evefyou-hooks": ">=1.0.29",
+    "react-evefyou-components": ">=1.0.47",
     "@iconify/react": ">=4.1.1",
     "moment": ">=2.29.4",
     "nprogress": ">=0.2.0"
